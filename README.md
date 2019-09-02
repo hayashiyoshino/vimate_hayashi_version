@@ -1,24 +1,40 @@
-# README
+# Vimate_hayashi_version
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Vimate is an sns for love vim.
 
-Things you may want to cover:
+## database design
 
-* Ruby version
+## users table
 
-* System dependencies
+| Column      | Type   | Options     |
+| ----------- | ------ | ----------- |
+| name        | string | null: false |
+| uid         | text   | null: false |
+| oauth_token | string | null: false |
 
-* Configuration
+### Association
 
-* Database creation
+- has_many vimrcs
 
-* Database initialization
+## vimrcs table
 
-* How to run the test suite
+| Column      | Type | Options     |
+| ----------- | ---- | ----------- |
+| image_url   | text | null: false |
+| description | text |             |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
 
-* Deployment instructions
+- belongs_to :user
 
-* ...
+## likes table
+
+| Column   | Type    | Options     |
+| -------- | ------- | ----------- |
+| vimrc_id | integer | null: false |
+| user_id  | text    | null: false |
+
+### Association
+
+- belongs_to :vimrc
+- belongs_to :user
