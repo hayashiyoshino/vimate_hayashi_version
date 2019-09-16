@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 2019_09_14_124048) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.text "uid"
-    t.string "oauth_token"
+    t.string "name", default: "", null: false
+    t.text "uid", default: "", null: false
+    t.string "oauth_token", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
