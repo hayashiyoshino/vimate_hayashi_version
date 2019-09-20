@@ -1,0 +1,2 @@
+class Vimrc < ApplicationRecord
+end
