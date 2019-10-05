@@ -4,11 +4,11 @@ jobs:
     docker: 
       - image: circleci/ruby:2.6.1-node-browsers 
         environment: 
-          PGUSER: circleci-demo-ruby
           RAILS_ENV: test
+          PGHOST: 127.0.0.1
           PGUSER: root
 
-      - image: circleci/postgres:11.1-alpine 
+      - image: circleci/postgres:10.4-alpine 
         environment: 
           POSTGRES_USER: root
           POSTGRES_DB: vimate_hayashi_version
